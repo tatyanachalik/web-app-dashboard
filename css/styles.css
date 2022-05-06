@@ -357,6 +357,7 @@ input {
     flex-basis: 10%;
 }
 
+
 input::placeholder,
 textarea::placeholder {
     color: rgb(169, 166, 166);
@@ -393,6 +394,10 @@ select {
     padding: 10px;
     margin: 0 15px 10px 0;
 }
+
+/* #userField {
+    width:100%;
+} */
 
 .form-area {
    width: auto;
@@ -522,6 +527,49 @@ button {
 }
 
 
+.dropdown-box
+ {
+ position: relative;
+ display: inline-block;
+}
+
+.list-box {
+    position: relative;
+    display: flex;
+    flex-basis: 100%;
+}
+
+.list {
+    transform: translate(0,40px);
+}
+
+.dropdown,
+.list {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown a,
+.member-list-item  {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover,
+.member-list-item:hover
+ {
+    background-color: #ddd;
+}
+
+.show { 
+    display: block;
+}
 
 
 
@@ -652,10 +700,7 @@ button {
         flex-basis: 25%;
     }
     
-    /* input {
-        flex-basis: 2%;
-        align-items:right;
-    } */
+    
     
     
 
