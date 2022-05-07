@@ -94,4 +94,28 @@ window.onclick = function(e) {
 }
 
 
+// ---------- LOCAL STORAGE DATA ----------
+
+
+
+const save = document.getElementById("save");
+const cancel = document.getElementById("cancel");
+const emailBtn = document.getElementById("togBtn");
+const publicBtn = document.getElementById("togBtn2");
+const zone = document.getElementById("timezone");
+
+cancel.addEventListener('click', () => {
+    localStorage.clear();
+
+    for(let i=0; i < 2; i++) {
+        labels[i].innerHTML = "OFF";
+        labels[i].classList.remove("on");
+    }
+
+    emailBtn.checked = false;
+    publicBtn.checked =false;
+    
+    zone.value = 'Select Timezone';
+});
+
 
