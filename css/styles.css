@@ -419,13 +419,28 @@ button {
 #save,
 #cancel {
     flex-basis: 50%;
+    transition: ease-out 0.4s;
 }
 
 #send,
 #save {
     background-color: #7477BF;
     color: white;
+    transition: ease-out 0.4s;
 }
+
+#save:active,
+#send:active {
+    background-color: #3f4166;
+    
+}
+
+#cancel:active {
+    background-color: rgb(88, 86, 86);
+    
+}
+
+
 
 
 .message h3,
@@ -457,7 +472,7 @@ button {
     
 }
 
-.toggle:after {
+.toggle:after{
 	content: '';
 	width: 80px;
 	height: 28px;
@@ -469,27 +484,27 @@ button {
 	clear: both;
 }
 
-.toggle:before {
+ .toggle:before {
 	content: '';
 	width: 20px;
 	height: 20px;
 	display: block;
 	position: absolute;
     top: 3px;
-	/* left: 0;
-	top: -3px; */
     border: 2px solid rgba(196, 195, 195, 0.55);
 	border-radius: 50%;
 	background: rgb(255, 255, 255);
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-}
+} 
 
-.toggle:checked:before {
+.toggle:checked:before
+{
 	left: 54px;
 	box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.6); 
 }
 
-.toggle:checked:after {
+.toggle:checked:after
+{ 
 	background: #7477BF;
     
 }
@@ -498,7 +513,8 @@ button {
 .toggle:before,
 .toggle:after,
 .toggle:checked:before,
-.toggle:checked:after {
+.toggle:checked:after 
+{
 	transition: ease .4s;
 	-webkit-transition: ease .4s;
 	-moz-transition: ease .4s;

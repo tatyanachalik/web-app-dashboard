@@ -10,6 +10,7 @@ for(let i=0; i < 2; i++) {
             // console.log("button toggled");
             labels[i].classList.add("on");
             labels[i].innerHTML= "ON";
+
         } else {
             labels[i].classList.remove("on");
             labels[i].innerHTML = "OFF";
@@ -27,7 +28,7 @@ function searchMembers() {
     list.classList.add("show");
     let searchVal = document.getElementById('userField');
     let members = document.getElementsByClassName('member-list-item');
-    searchVal = searchVal.value.toUpperCase();
+    let searchValUpper = searchVal.value.toUpperCase();
     
     
     //console.log(searchVal);
@@ -41,7 +42,7 @@ function searchMembers() {
         text = text.toUpperCase();
         // console.log(text);
         // console.log(text.indexOf(searchVal));
-        if (text.includes(searchVal)) {
+        if (text.includes(searchValUpper)) {
             members[i].style.display = "";
         } else {
             members[i].style.display = "none";
@@ -96,13 +97,27 @@ window.onclick = function(e) {
 
 // ---------- LOCAL STORAGE DATA ----------
 
-
-
 const save = document.getElementById("save");
 const cancel = document.getElementById("cancel");
 const emailBtn = document.getElementById("togBtn");
 const publicBtn = document.getElementById("togBtn2");
-const zone = document.getElementById("timezone");
+let zone = document.getElementById("timezone");
+
+var emailVal = localStorage.getItem("email");
+var privacyVal = localStorage.getItem("privacy");
+var zoneVal = localStorage.getItem("timezone");
+
+console.log(emailVal);
+console.log(privacyVal);
+console.log(zoneVal);
+
+save.addEventListener('click', () => {
+    console.log("save clicked");
+    localStorage.setItem("email", emailBtn.checked);
+    localStorage.setItem("privacy", publicBtn.checked);
+    localStorage.setItem("timezone", zone.value);
+    console.log(emailBtn.checked);
+});
 
 cancel.addEventListener('click', () => {
     localStorage.clear();
@@ -114,8 +129,44 @@ cancel.addEventListener('click', () => {
 
     emailBtn.checked = false;
     publicBtn.checked =false;
-    
-    zone.value = 'Select Timezone';
+    zone.selectedIndex = 0;
+    // console.log(zone.value);
 });
 
+window.addEventListener("load", (event) => {
+    console.log("emailVal", emailVal);
+    zone.value = zoneVal;
+    labelOne = document.getElementById("label1");
+    labelTwo = document.getElementById("label2");
+
+    
+        if (emailVal === "true") {
+        emailBtn.checked = true;
+        labelOne.classList.add("on");
+        labelOne.innerHTML = "ON";
+        }  else if (emailVal === "false") {
+        emailBtn.checked = false;
+        labelOne.classList.remove("on");
+        labelOne.innerHTML = "OFF";
+        }
+
+        if (privacyVal === "true") {
+        publicBtn.checked = true;
+        labelTwo.classList.add("on");
+        labelTwo.innerHTML = "ON";
+        
+        } else if (privacyVal === "false") {
+            labelTwo.classList.remove("on");
+            publicBtn.checked = false;
+            labelTwo.innerHTML = "OFF";
+            
+         }
+
+         if (zoneVal === null) {
+            zone.selectedIndex = 0;
+         }
+
+        
+  });
+  
 
