@@ -75,6 +75,21 @@ header img {
     fill: #3b3c62;
 }
 
+.icon {
+    width: 30px;
+    margin: 0 10px;
+    height: auto;
+    fill: white;
+   
+}
+
+#icon-fill {
+    transition: all 0.4s ease-out;
+}
+
+.icon:hover #icon-fill {
+   fill: rgb(137, 205, 137);
+}
 
 .main-header {
     display:flex;
@@ -720,6 +735,10 @@ button {
         flex-basis: 25%;
     }
     
+    .icon {
+        margin: 15px 10px;
+       
+    }
     
     
     
