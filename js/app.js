@@ -1,22 +1,23 @@
 
 //  ---------- TOGGLE BTN ----------
-const toggle = document.getElementsByClassName("toggle");
-const labels = document.getElementsByClassName("labels");
 
-for(let i=0; i < 2; i++) {
-    labels[i].innerHTML = "OFF";
-    toggle[i].addEventListener( "click", () => {
-        if(labels[i].innerHTML == "OFF") {
-            // console.log("button toggled");
-            labels[i].classList.add("on");
-            labels[i].innerHTML= "ON";
+// const toggle = document.getElementsByClassName("toggle");
+// const labels = document.getElementsByClassName("labels");
 
-        } else {
-            labels[i].classList.remove("on");
-            labels[i].innerHTML = "OFF";
-        }
-    });
-}
+// for(let i=0; i < 2; i++) {
+//     labels[i].innerHTML = "OFF";
+//     toggle[i].addEventListener( "click", () => {
+//         if(labels[i].innerHTML == "OFF") {
+//             // console.log("button toggled");
+//             labels[i].classList.add("on");
+//             labels[i].innerHTML= "ON";
+
+//         } else {
+//             labels[i].classList.remove("on");
+//             labels[i].innerHTML = "OFF";
+//         }
+//     });
+// }
 
 //  ---------- SEARCH MEMBERS  ----------
 
@@ -122,10 +123,10 @@ save.addEventListener('click', () => {
 cancel.addEventListener('click', () => {
     localStorage.clear();
 
-    for(let i=0; i < 2; i++) {
-        labels[i].innerHTML = "OFF";
-        labels[i].classList.remove("on");
-    }
+    // for(let i=0; i < 2; i++) {
+    //     labels[i].innerHTML = "OFF";
+    //     labels[i].classList.remove("on");
+    // }
 
     emailBtn.checked = false;
     publicBtn.checked =false;
@@ -142,23 +143,23 @@ window.addEventListener("load", (event) => {
     
         if (emailVal === "true") {
         emailBtn.checked = true;
-        labelOne.classList.add("on");
-        labelOne.innerHTML = "ON";
+        // labelOne.classList.add("on");
+        // labelOne.innerHTML = "ON";
         }  else if (emailVal === "false") {
         emailBtn.checked = false;
-        labelOne.classList.remove("on");
-        labelOne.innerHTML = "OFF";
+        // labelOne.classList.remove("on");
+        // labelOne.innerHTML = "OFF";
         }
 
         if (privacyVal === "true") {
         publicBtn.checked = true;
-        labelTwo.classList.add("on");
-        labelTwo.innerHTML = "ON";
+        // labelTwo.classList.add("on");
+        // labelTwo.innerHTML = "ON";
         
         } else if (privacyVal === "false") {
-            labelTwo.classList.remove("on");
+            // labelTwo.classList.remove("on");
             publicBtn.checked = false;
-            labelTwo.innerHTML = "OFF";
+            // labelTwo.innerHTML = "OFF";
             
          }
 

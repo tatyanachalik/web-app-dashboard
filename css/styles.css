@@ -547,10 +547,10 @@ button {
     transform: translate(-48px, -3px);
 }
 
-.on {
+/* .on {
     color: white;
     transform: translate(-90px, -3px);
-}
+} */
 
 .date {
     margin:0;
