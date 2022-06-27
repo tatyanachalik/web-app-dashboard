@@ -482,7 +482,8 @@ button {
 .toggle {
     -webkit-appearance: none;
 	-webkit-tap-highlight-color: transparent;
-	position: relative;
+	flex-basis: 75%;
+    position: relative;
 	outline: 0;
 	cursor: pointer;
 	margin: 10px 15px;
